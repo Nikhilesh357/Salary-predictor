@@ -19,3 +19,5 @@ state_encoder = joblib.load('models/state_encoder.pkl')
 county_encoder = joblib.load('models/county_encoder.pkl')
 
 df = pd.read_csv('data/jobs.csv')
+
+st.title("Salary Predictor")
