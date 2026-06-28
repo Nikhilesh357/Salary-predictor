@@ -22,12 +22,12 @@ raw_df = pd.read_csv('data/jobs.csv')
 # state_encoder = joblib.load('state_encoder.pkl')
 # county_encoder = joblib.load('county_encoder.pkl')
 
-rf = joblib.load('models/salary_predictor.pkl')
-title_encoder = joblib.load('models/title_encoder.pkl')
-company_encoder = joblib.load('models/company_encoder.pkl')
-category_encoder = joblib.load('models/category_encoder.pkl')
-state_encoder = joblib.load('models/state_encoder.pkl')
-county_encoder = joblib.load('models/county_encoder.pkl')
+# rf = joblib.load('models/salary_predictor.pkl')
+# title_encoder = joblib.load('models/title_encoder.pkl')
+# company_encoder = joblib.load('models/company_encoder.pkl')
+# category_encoder = joblib.load('models/category_encoder.pkl')
+# state_encoder = joblib.load('models/state_encoder.pkl')
+# county_encoder = joblib.load('models/county_encoder.pkl')
 
 df = pd.read_csv('data/jobs.csv')
 
@@ -108,42 +108,35 @@ category = st.selectbox(
     sorted(filtered_categories)
 )
 
-# Display selections
+# # Display selections
 st.write("Company:", company)
 st.write("Title:", title)
 st.write("State:", state)
 st.write("County:", county)
 st.write("Category:", category)
 
-st.write(raw_df.columns)
 
-st.write(raw_df[["state", "county"]].head(20))
+rf = joblib.load('models/salary_predictor.pkl')
+title_encoder = joblib.load('models/title_encoder.pkl')
+company_encoder = joblib.load('models/company_encoder.pkl')
+category_encoder = joblib.load('models/category_encoder.pkl')
+state_encoder = joblib.load('models/state_encoder.pkl')
+county_encoder = joblib.load('models/county_encoder.pkl')
 
-st.write(raw_df["state"].dtype)
-st.write(raw_df["county"].dtype)
+# st.write(raw_df.columns)
 
-st.write(raw_df["state"].nunique())
-st.write(raw_df["county"].nunique())
+# st.write(raw_df[["state", "county"]].head(20))
 
-st.write(state)
-st.write(raw_df[raw_df["state"] == state].shape)
+# st.write(raw_df["state"].dtype)
+# st.write(raw_df["county"].dtype)
 
-# title_val = title_encoder.transform([title_dropdown.value])[0]
-# company_val = company_encoder.transform([company_dropdown.value])[0]
-# category_val = category_encoder.transform([category_dropdown.value])[0]
-# state_val = state_encoder.transform([state_dropdown.value])[0]
-# county_val = county_encoder.transform([county_dropdown.value])[0]
+# st.write(raw_df["state"].nunique())
+# st.write(raw_df["county"].nunique())
 
-# new_job = [[
-#     title_val,
-#     company_val,
-#     category_val,
-#     state_val,
-#     county_val,
-# ]]
+# st.write(state)
+# st.write(raw_df[raw_df["state"] == state].shape)
 
-# predicted_salary = rf.predict(new_job)[0]
-# print(f"Predicted Salary: £{predicted_salary:,.0f}")
+
 
 
 
