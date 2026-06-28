@@ -50,7 +50,7 @@ county_dropdown = st.selectbox(
 
 company = st.selectbox(
     "Company",
-    sorted(df["company"].dropna().unique())
+    sorted(company_encoder.classes_)
 )
 
 filtered_titles = (
