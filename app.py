@@ -17,7 +17,7 @@ category_encoder = joblib.load('models/category_encoder.pkl')
 state_encoder = joblib.load('models/state_encoder.pkl')
 county_encoder = joblib.load('models/county_encoder.pkl')
 
-df = pd.read_csv('jobs.csv')
+df = pd.read_csv('data/jobs.csv')
 
 title_dropdown = st.selectbox(
     options=sorted(title_encoder.classes_),
