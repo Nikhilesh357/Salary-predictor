@@ -22,12 +22,12 @@ raw_df = pd.read_csv('data/jobs.csv')
 # state_encoder = joblib.load('state_encoder.pkl')
 # county_encoder = joblib.load('county_encoder.pkl')
 
-# rf = joblib.load('models/salary_predictor.pkl')
-# title_encoder = joblib.load('models/title_encoder.pkl')
-# company_encoder = joblib.load('models/company_encoder.pkl')
-# category_encoder = joblib.load('models/category_encoder.pkl')
-# state_encoder = joblib.load('models/state_encoder.pkl')
-# county_encoder = joblib.load('models/county_encoder.pkl')
+rf = joblib.load('models/salary_predictor.pkl')
+title_encoder = joblib.load('models/title_encoder.pkl')
+company_encoder = joblib.load('models/company_encoder.pkl')
+category_encoder = joblib.load('models/category_encoder.pkl')
+state_encoder = joblib.load('models/state_encoder.pkl')
+county_encoder = joblib.load('models/county_encoder.pkl')
 
 df = pd.read_csv('data/jobs.csv')
 
@@ -114,14 +114,6 @@ st.write("Title:", title)
 st.write("State:", state)
 st.write("County:", county)
 st.write("Category:", category)
-
-
-rf = joblib.load('models/salary_predictor.pkl')
-title_encoder = joblib.load('models/title_encoder.pkl')
-company_encoder = joblib.load('models/company_encoder.pkl')
-category_encoder = joblib.load('models/category_encoder.pkl')
-state_encoder = joblib.load('models/state_encoder.pkl')
-county_encoder = joblib.load('models/county_encoder.pkl')
 
 # st.write(raw_df.columns)
 
