@@ -7,29 +7,29 @@ Original file is located at
     https://colab.research.google.com/drive/1ZMA8Ebod8JfoTM3PqjDL2hOP0TkuDcDt
 """
 
-pip install streamlit
+# pip install streamlit
 
 import streamlit as st
 import pandas as pd
 import joblib
 
-raw_df = pd.read_csv('jobs.csv')
+raw_df = pd.read_csv('data/jobs.csv')
 
-rf = joblib.load('salary_predictor.pkl')
-title_encoder = joblib.load('title_encoder.pkl')
-company_encoder = joblib.load('company_encoder.pkl')
-category_encoder = joblib.load('category_encoder.pkl')
-state_encoder = joblib.load('state_encoder.pkl')
-county_encoder = joblib.load('county_encoder.pkl')
+# rf = joblib.load('salary_predictor.pkl')
+# title_encoder = joblib.load('title_encoder.pkl')
+# company_encoder = joblib.load('company_encoder.pkl')
+# category_encoder = joblib.load('category_encoder.pkl')
+# state_encoder = joblib.load('state_encoder.pkl')
+# county_encoder = joblib.load('county_encoder.pkl')
 
-# rf = joblib.load('models/salary_predictor.pkl')
-# title_encoder = joblib.load('models/title_encoder.pkl')
-# company_encoder = joblib.load('models/company_encoder.pkl')
-# category_encoder = joblib.load('models/category_encoder.pkl')
-# state_encoder = joblib.load('models/state_encoder.pkl')
-# county_encoder = joblib.load('models/county_encoder.pkl')
+rf = joblib.load('models/salary_predictor.pkl')
+title_encoder = joblib.load('models/title_encoder.pkl')
+company_encoder = joblib.load('models/company_encoder.pkl')
+category_encoder = joblib.load('models/category_encoder.pkl')
+state_encoder = joblib.load('models/state_encoder.pkl')
+county_encoder = joblib.load('models/county_encoder.pkl')
 
-df = pd.read_csv('jobs.csv')
+df = pd.read_csv('data/jobs.csv')
 
 title_dropdown = st.selectbox(
     options=sorted(title_encoder.classes_),
