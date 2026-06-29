@@ -31,34 +31,34 @@ county_encoder = joblib.load('models/county_encoder.pkl')
 
 df = pd.read_csv('data/jobs.csv')
 
-title_dropdown = st.selectbox(
-    options=sorted(title_encoder.classes_),
-    label = 'Job title',
-    placeholder= 'Title:'
-)
-company_dropdown = st.selectbox(
-    options=sorted(company_encoder.classes_),
-    label = 'company',
-    placeholder= 'company'
-)
+# title_dropdown = st.selectbox(
+#     options=sorted(title_encoder.classes_),
+#     label = 'Job title',
+#     placeholder= 'Title:'
+# )
+# company_dropdown = st.selectbox(
+#     options=sorted(company_encoder.classes_),
+#     label = 'company',
+#     placeholder= 'company'
+# )
 
-category_dropdown = st.selectbox(
-    options=sorted(category_encoder.classes_),
-    label = 'category',
-    placeholder = 'category'
-)
+# category_dropdown = st.selectbox(
+#     options=sorted(category_encoder.classes_),
+#     label = 'category',
+#     placeholder = 'category'
+# )
 
-state_dropdown = st.selectbox(
-    options=sorted([x for x in state_encoder.classes_ if x is not None]),
-    label = 'state',
-    placeholder= 'State'
-)
-county_dropdown = st.selectbox(
-    options=[],
-    label = 'County',
-    placeholder= 'County:'
+# state_dropdown = st.selectbox(
+#     options=sorted([x for x in state_encoder.classes_ if x is not None]),
+#     label = 'state',
+#     placeholder= 'State'
+# )
+# county_dropdown = st.selectbox(
+#     options=[],
+#     label = 'County',
+#     placeholder= 'County:'
 
-)
+# )
 
 company = st.selectbox(
     "Company",
@@ -108,12 +108,12 @@ category = st.selectbox(
     sorted(filtered_categories)
 )
 
-# # # Display selections
-# st.write("Company:", company)
-# st.write("Title:", title)
-# st.write("State:", state)
-# st.write("County:", county)
-# st.write("Category:", category)
+# # Display selections
+st.write("Company:", company)
+st.write("Title:", title)
+st.write("State:", state)
+st.write("County:", county)
+st.write("Category:", category)
 
 
 
