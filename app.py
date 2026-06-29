@@ -76,6 +76,12 @@ title = st.selectbox(
     sorted(filtered_titles)
 )
 
+filtered_statess = (
+    df.loc[df["company"] == company, "state"]
+      .dropna()
+      .unique()
+)
+
 state = st.selectbox(
     "State",
     sorted(df["state"].dropna().unique())
