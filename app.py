@@ -13,7 +13,7 @@ import streamlit as st
 import pandas as pd
 import joblib
 
-raw_df = pd.read_csv('data/jobs.csv')
+df = pd.read_csv('data/jobs.csv')
 
 # rf = joblib.load('salary_predictor.pkl')
 # title_encoder = joblib.load('title_encoder.pkl')
@@ -66,7 +66,7 @@ company = st.selectbox(
 )
 
 filtered_titles = (
-    raw_df.loc[raw_df["company"] == company, "title"]
+    df.loc[df["company"] == company, "title"]
       .dropna()
       .unique()
 )
@@ -78,11 +78,11 @@ title = st.selectbox(
 
 state = st.selectbox(
     "State",
-    sorted(raw_df["state"].dropna().unique())
+    sorted(df["state"].dropna().unique())
 )
 
 filtered_counties = (
-    raw_df.loc[raw_df["state"] == state, "county"]
+    df.loc[df["state"] == state, "county"]
       .dropna()
       .unique()
 )
@@ -95,8 +95,8 @@ county = st.selectbox(
 
 filtered_categories = (
     df.loc[
-        (raw_df["company"] == company) &
-        (raw_df["title"] == title),
+        (df["company"] == company) &
+        (df["title"] == title),
         "category"
     ]
     .dropna()
@@ -115,18 +115,6 @@ st.write("State:", state)
 st.write("County:", county)
 st.write("Category:", category)
 
-# st.write(raw_df.columns)
-
-# st.write(raw_df[["state", "county"]].head(20))
-
-# st.write(raw_df["state"].dtype)
-# st.write(raw_df["county"].dtype)
-
-# st.write(raw_df["state"].nunique())
-# st.write(raw_df["county"].nunique())
-
-# st.write(state)
-# st.write(raw_df[raw_df["state"] == state].shape)
 
 
 
