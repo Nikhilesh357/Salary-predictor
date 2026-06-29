@@ -108,12 +108,12 @@ category = st.selectbox(
     sorted(filtered_categories)
 )
 
-# # Display selections
-st.write("Company:", company)
-st.write("Title:", title)
-st.write("State:", state)
-st.write("County:", county)
-st.write("Category:", category)
+# # # Display selections
+# st.write("Company:", company)
+# st.write("Title:", title)
+# st.write("State:", state)
+# st.write("County:", county)
+# st.write("Category:", category)
 
 
 
