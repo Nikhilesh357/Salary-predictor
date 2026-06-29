@@ -116,7 +116,29 @@ st.write("County:", county)
 st.write("Category:", category)
 
 
+if st.button("Predict Salary"):
 
+    # Encode the selected values
+    title_encoded = title_encoder.transform([title])[0]
+    company_encoded = company_encoder.transform([company])[0]
+    category_encoded = category_encoder.transform([category])[0]
+    state_encoded = state_encoder.transform([state])[0]
+    county_encoded = county_encoder.transform([county])[0]
+
+    # Create input for the model
+    new_job = pd.DataFrame({
+        "title": [title_encoded],
+        "company": [company_encoded],
+        "category": [category_encoded],
+        "state": [state_encoded],
+        "county": [county_encoded]
+    })
+
+    # Predict salary
+    predicted_salary = rf.predict(new_job)[0]
+
+    # Display result
+    st.success(f"Predicted Salary: £{predicted_salary:,.0f}")
 
 
 
